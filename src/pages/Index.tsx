@@ -473,8 +473,12 @@ const Index = () => {
             <div>
               <h3 className="font-semibold mb-4">Информация</h3>
               <div className="space-y-2 text-sm text-white/70">
-                <div>Политика конфиденциальности</div>
-                <div>Условия использования</div>
+                <a href="/privacy-policy.html" className="block hover:text-white transition-colors">
+                  Политика конфиденциальности
+                </a>
+                <a href="/terms-of-use.html" className="block hover:text-white transition-colors">
+                  Условия использования
+                </a>
               </div>
             </div>
           </div>
