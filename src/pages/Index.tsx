@@ -15,14 +15,26 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <header className="border-b border-border sticky top-0 bg-white/95 backdrop-blur-sm z-50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Icon name="Target" size={28} className="text-primary" />
-            <span className="text-xl font-bold text-secondary">LeadGen AI</span>
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex items-center justify-between flex-wrap gap-4">
+            <div className="flex items-center gap-2">
+              <Icon name="Target" size={28} className="text-primary" />
+              <span className="text-xl font-bold text-secondary">LeadGen AI</span>
+            </div>
+            <div className="hidden md:flex items-center gap-6 text-sm">
+              <a href="tel:+79936929392" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+                <Icon name="Phone" size={16} />
+                <span>+7 (993) 692-93-92</span>
+              </a>
+              <a href="mailto:Consult@shelfin.ru" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+                <Icon name="Mail" size={16} />
+                <span>Consult@shelfin.ru</span>
+              </a>
+            </div>
+            <Button onClick={() => window.open(GOOGLE_FORM_URL, "_blank")} className="bg-accent hover:bg-accent/90">
+              Получить 7 лидов бесплатно
+            </Button>
           </div>
-          <Button onClick={() => window.open(GOOGLE_FORM_URL, "_blank")} className="bg-accent hover:bg-accent/90">
-            Получить 7 лидов бесплатно
-          </Button>
         </div>
       </header>
 
