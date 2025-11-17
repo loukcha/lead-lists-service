@@ -483,6 +483,17 @@ const Index = () => {
           </div>
         </div>
       </footer>
+
+      <a
+        href="tel:+79936929392"
+        className="fixed bottom-6 right-6 w-14 h-14 bg-accent hover:bg-accent/90 text-white rounded-full shadow-lg hover:shadow-xl transition-all flex items-center justify-center z-40 group"
+        aria-label="Позвонить"
+      >
+        <Icon name="Phone" size={24} className="group-hover:scale-110 transition-transform" />
+        <span className="absolute right-full mr-3 bg-secondary text-white text-sm px-3 py-2 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+          +7 (993) 692-93-92
+        </span>
+      </a>
     </div>
   );
 };
