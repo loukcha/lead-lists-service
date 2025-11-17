@@ -8,15 +8,24 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import Icon from "@/components/ui/icon";
+import { useState } from "react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const GOOGLE_FORM_URL = "https://forms.gle/pSLNuGLMSBH11XYr7";
 
 const Index = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  
   return (
     <div className="min-h-screen bg-background">
       <header className="border-b border-border sticky top-0 bg-white/95 backdrop-blur-sm z-50">
         <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between flex-wrap gap-4">
+          <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-2">
               <Icon name="Target" size={28} className="text-primary" />
               <span className="text-xl font-bold text-secondary">LeadGen AI</span>
@@ -31,9 +40,36 @@ const Index = () => {
                 <span>Consult@shelfin.ru</span>
               </a>
             </div>
-            <Button onClick={() => window.open(GOOGLE_FORM_URL, "_blank")} className="bg-accent hover:bg-accent/90">
-              Получить 7 лидов бесплатно
-            </Button>
+            <div className="flex items-center gap-2">
+              <DropdownMenu open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+                <DropdownMenuTrigger asChild className="md:hidden">
+                  <Button variant="ghost" size="icon">
+                    <Icon name="Menu" size={24} />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-56">
+                  <DropdownMenuItem asChild>
+                    <a href="tel:+79936929392" className="flex items-center gap-2 cursor-pointer">
+                      <Icon name="Phone" size={16} />
+                      <span>+7 (993) 692-93-92</span>
+                    </a>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <a href="mailto:Consult@shelfin.ru" className="flex items-center gap-2 cursor-pointer">
+                      <Icon name="Mail" size={16} />
+                      <span>Consult@shelfin.ru</span>
+                    </a>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => { window.open(GOOGLE_FORM_URL, "_blank"); setMobileMenuOpen(false); }}>
+                    <Icon name="FileText" size={16} className="mr-2" />
+                    <span>Получить 7 лидов</span>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+              <Button onClick={() => window.open(GOOGLE_FORM_URL, "_blank")} className="bg-accent hover:bg-accent/90 hidden md:inline-flex">
+                Получить 7 лидов бесплатно
+              </Button>
+            </div>
           </div>
         </div>
       </header>
