@@ -412,14 +412,14 @@ const Index = () => {
             <div>
               <h3 className="font-semibold mb-4">Контакты</h3>
               <div className="space-y-2 text-sm text-white/70">
-                <div className="flex items-center gap-2">
+                <a href="mailto:Consult@shelfin.ru" className="flex items-center gap-2 hover:text-white transition-colors">
                   <Icon name="Mail" size={16} />
-                  <span>support@leadgen-ai.ru</span>
-                </div>
-                <div className="flex items-center gap-2">
+                  <span>Consult@shelfin.ru</span>
+                </a>
+                <a href="tel:+79936929392" className="flex items-center gap-2 hover:text-white transition-colors">
                   <Icon name="Phone" size={16} />
-                  <span>+7 (999) 123-45-67</span>
-                </div>
+                  <span>+7 (993) 692-93-92</span>
+                </a>
               </div>
             </div>
             <div>
