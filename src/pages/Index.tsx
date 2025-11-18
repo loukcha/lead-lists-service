@@ -16,7 +16,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-const GOOGLE_FORM_URL = "https://forms.gle/pSLNuGLMSBH11XYr7";
+const GOOGLE_FORM_URL = "https://forms.gle/uxv12emZRatHR4AAA";
 
 const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
